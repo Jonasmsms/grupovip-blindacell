@@ -78,7 +78,7 @@
 
   h1 {
     font-family: 'Fredoka', 'Poppins', sans-serif;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     color: #1A1A1A;
     line-height: 1.3;
@@ -95,14 +95,14 @@
     color: #777;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 26px;
+    margin-bottom: 22px;
   }
 
   p {
-    font-size: 18px;
+    font-size: 17px;
     color: #3a3a3a;
-    margin-bottom: 28px;
-    line-height: 1.8;
+    margin-bottom: 22px;
+    line-height: 1.75;
     font-weight: 400;
   }
 
@@ -112,11 +112,45 @@
     border-bottom: 3px solid #FFD0A8;
   }
 
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 24px;
+    padding: 16px 10px;
+    background: #FFF4EC;
+    border-radius: 14px;
+  }
+
+  .stat {
+    text-align: center;
+    flex: 1;
+  }
+
+  .stat-num {
+    display: block;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF6B00;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 10px;
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    margin-top: 3px;
+  }
+
   .perks {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 28px;
+    margin-bottom: 26px;
     text-align: left;
   }
 
@@ -140,9 +174,9 @@
     gap: 12px;
     background: linear-gradient(135deg, #2EE573, #1DA851);
     color: #ffffff;
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 800;
-    padding: 24px 28px;
+    padding: 24px 24px;
     border-radius: 16px;
     text-decoration: none;
     width: 100%;
@@ -150,6 +184,7 @@
     transition: transform 0.15s, box-shadow 0.15s;
     animation: pulse-shadow 1.6s ease-in-out infinite;
     border: 2px solid #1DA851;
+    text-align: center;
   }
 
   .btn-whats:active {
@@ -192,29 +227,36 @@
 <div class="card">
   <div class="header">
     <div class="logo">Blinda<span>Cell</span></div>
-    <div class="ribbon">📱 Avisos e novidades</div>
+    <div class="ribbon">🔥 Grupo Oficial • Vagas Abertas</div>
   </div>
 
   <div class="content">
-    <h1>Grupo <span>VIP</span></h1>
-    <div class="subtitle">BlindaCell</div>
+    <h1>Desconto, prioridade e <span>novidade em 1º lugar</span></h1>
+    <div class="subtitle">Grupo VIP BlindaCell</div>
 
-    <p>Entre agora e fique por dentro de <strong>tudo em primeira mão</strong>: novidades, promoções e avisos exclusivos direto no seu WhatsApp.</p>
+    <p>Uma tela trincada custa de <strong>R$ 300 a R$ 800</strong> pra consertar. No Grupo VIP você trava desconto exclusivo na blindagem e fica sabendo na hora de toda promoção — antes que as vagas acabem.</p>
+
+    <div class="stats-row">
+      <div class="stat"><span class="stat-num">+500</span><span class="stat-label">celulares blindados</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">aprovação dos clientes</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">telas quebradas depois</span></div>
+    </div>
 
     <div class="perks">
-      <div class="perk">🔔 Avisos e novidades em primeira mão</div>
-      <div class="perk">🛡️ Promoções exclusivas de blindagem</div>
-      <div class="perk">💬 Atendimento rápido e direto</div>
+      <div class="perk">🛡️ Até 30% OFF em qualquer blindagem</div>
+      <div class="perk">⚡ Atendimento prioritário, sem fila de espera</div>
+      <div class="perk">🎁 Promoções-relâmpago só pra quem está no grupo</div>
+      <div class="perk">🔔 Você sabe de tudo antes de todo mundo</div>
     </div>
 
     <a class="btn-whats" href="https://chat.whatsapp.com/EVWbcuZMVo5H0sJrqABLFH?s=cl&p=i&ilr=0" target="_blank">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.6 6.32A8.86 8.86 0 0 0 12.04 3.5a8.93 8.93 0 0 0-7.74 13.4L3 21l4.27-1.12a8.9 8.9 0 0 0 4.77 1.37A8.93 8.93 0 0 0 21 12.65a8.86 8.86 0 0 0-3.4-6.33zM12.04 19.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.74.75-2.73-.18-.28a7.4 7.4 0 0 1-1.13-3.94 7.42 7.42 0 1 1 7.41 7.41zm4.07-5.55c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.85-.13.15-.26.16-.48.05-.22-.11-1.04-.38-1.98-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.01-.39.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.4.08-.16.04-.3-.04-.41-.07-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.59.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.53 2.34 3.71 3.18 1.84.7 2.21.62 2.61.55.39-.07 1.3-.53 1.49-1.04.18-.5.18-.93.13-1.04-.05-.1-.18-.16-.39-.27z"/>
       </svg>
-      Entrar no Grupo VIP
+      Quero meu desconto agora
     </a>
 
-    <div class="footer">Vagas <strong>limitadas</strong> — entre antes que acabe</div>
+    <div class="footer">⏳ Vagas <strong>limitadas</strong> — o grupo fecha quando lotar</div>
 
     <a class="privacy-link" href="politica-de-privacidade.html">Política de Privacidade</a>
   </div>
