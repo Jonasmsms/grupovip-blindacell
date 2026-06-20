@@ -3,294 +3,618 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo VIP — BlindaCell</title>
+<title>Grupo VIP Oficial — BlindaCell</title>
+<meta name="description" content="Entre no Grupo VIP BlindaCell e proteja seu celular com descontos exclusivos, atendimento prioritário e promoções antecipadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Fredoka:wght@600;700&display=swap');
-
-  html {
-    background: #0A0B0F;
+  :root{
+    --blue:#1F6FDE;
+    --blue-light:#4C8FEA;
+    --blue-dark:#0F2D66;
+    --navy:#0B2150;
+    --gray-900:#1A1F29;
+    --gray-700:#4B5563;
+    --gray-500:#7C8694;
+    --gray-100:#F5F7FA;
+    --white:#FFFFFF;
+    --tint:#EAF1FC;
+    --wa:#25D366;
+    --wa-dark:#1DA851;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --container:460px;
   }
 
-  body {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    background: #0A0B0F;
-    background-image:
-      radial-gradient(circle at 15% 10%, rgba(255,107,0,0.12) 0%, transparent 40%),
-      radial-gradient(circle at 85% 90%, rgba(255,107,0,0.08) 0%, transparent 45%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 24px;
-    margin: 0;
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    color:var(--gray-900);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:84px;
   }
 
-  .card {
-    background: #ffffff;
-    border-radius: 24px;
-    overflow: hidden;
-    max-width: 440px;
-    width: 100%;
-    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
-    box-sizing: border-box;
+  h1,h2,h3{font-family:'Sora',sans-serif;letter-spacing:-0.01em}
+
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  svg{display:block}
+
+  .wrap{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 24px;
   }
 
-  .header {
-    padding: 40px 32px 24px;
-    text-align: center;
-    position: relative;
-    overflow: visible;
-    background: linear-gradient(135deg, #0A0B0F, #1A1B22);
+  /* ---------- subtle entrance animation: pure CSS, always ends fully visible even if scripts are blocked ---------- */
+  .reveal{
+    animation:fadeUp .6s ease both;
+  }
+  .benefit-card:nth-child(2){animation-delay:.06s}
+  .benefit-card:nth-child(3){animation-delay:.12s}
+  .benefit-card:nth-child(4){animation-delay:.18s}
+  .benefit-card:nth-child(5){animation-delay:.24s}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{animation:none}
   }
 
-  .brand-icon {
-    width: 86px;
-    height: auto;
-    display: inline-block;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 6px 14px rgba(0,0,0,.4));
+  /* ---------- shared eyebrow / heading styles ---------- */
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--blue);
   }
 
-  .logo {
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    color: #fff;
-    letter-spacing: -0.5px;
+  .section-pad{padding:64px 0}
+
+  /* ================= HERO ================= */
+  .hero{
+    background:
+      radial-gradient(circle at 20% 0%, rgba(76,143,234,.35) 0%, transparent 45%),
+      radial-gradient(circle at 90% 90%, rgba(31,111,222,.28) 0%, transparent 50%),
+      linear-gradient(160deg, var(--navy), var(--blue-dark) 65%, #143a82);
+    padding:48px 0 56px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
   }
 
-  .logo span {
-    color: #FF6B00;
+  .hero-icon{
+    width:72px;
+    height:auto;
+    margin:0 auto 18px;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));
+    animation:dropIn .8s cubic-bezier(.2,.8,.2,1) both;
   }
 
-  .ribbon {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #FF6B00;
-    color: #fff;
-    font-weight: 800;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    padding: 8px 18px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    margin-top: 18px;
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(6px);
+    color:#DCE8FF;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    padding:9px 16px;
+    border-radius:999px;
+    margin-bottom:22px;
+    animation:dropIn .8s .1s cubic-bezier(.2,.8,.2,1) both;
   }
 
-  .content {
-    padding: 28px 32px 36px;
-    text-align: center;
+  .hero-badge svg{width:14px;height:14px;color:#7CB0FF}
+
+  .hero h1{
+    color:var(--white);
+    font-size:33px;
+    font-weight:800;
+    line-height:1.28;
+    text-wrap:balance;
+    margin-bottom:16px;
+    animation:dropIn .8s .18s cubic-bezier(.2,.8,.2,1) both;
   }
 
-  h1 {
-    font-family: 'Fredoka', 'Poppins', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #1A1A1A;
-    line-height: 1.3;
-    margin-bottom: 10px;
-    text-wrap: balance;
+  .hero h1 .money{
+    color:#7FB4FF;
+    background:linear-gradient(180deg, transparent 62%, rgba(127,180,255,.28) 0%);
   }
 
-  h1 span {
-    color: #FF6B00;
+  .hero p.lead{
+    color:#C3D4F2;
+    font-size:16.5px;
+    line-height:1.65;
+    text-wrap:pretty;
+    margin-bottom:28px;
+    animation:dropIn .8s .26s cubic-bezier(.2,.8,.2,1) both;
   }
 
-  .subtitle {
-    font-size: 14px;
-    font-weight: 700;
-    color: #777;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 22px;
+  .hero-cta-wrap{
+    animation:dropIn .8s .34s cubic-bezier(.2,.8,.2,1) both;
   }
 
-  p {
-    font-size: 17px;
-    color: #3a3a3a;
-    margin-bottom: 22px;
-    line-height: 1.75;
-    font-weight: 400;
-    text-wrap: pretty;
+  @keyframes dropIn{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
   }
 
-  p strong {
-    color: #1A1A1A;
-    font-weight: 700;
-    border-bottom: 3px solid #FFD0A8;
+  /* shared WhatsApp CTA button */
+  .btn-cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:linear-gradient(135deg,#2EE573,var(--wa-dark));
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    font-size:16.5px;
+    font-weight:800;
+    letter-spacing:.2px;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:19px 22px;
+    border-radius:14px;
+    width:100%;
+    border:1px solid var(--wa-dark);
+    box-shadow:0 14px 30px rgba(20,140,80,.4);
+    animation:pulseCta 2s ease-in-out infinite;
+  }
+  .btn-cta:active{transform:scale(.98)}
+  .btn-cta svg{width:22px;height:22px;flex-shrink:0}
+  .btn-cta span{text-wrap:balance;line-height:1.25}
+
+  @keyframes pulseCta{
+    0%,100%{box-shadow:0 14px 30px rgba(20,140,80,.4)}
+    50%{box-shadow:0 16px 38px rgba(20,140,80,.62)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn-cta{animation:none}
   }
 
-  .stats-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-    margin-bottom: 24px;
-    padding: 16px 10px;
-    background: #FFF4EC;
-    border-radius: 14px;
+  .trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px 16px;
+    margin-top:20px;
+  }
+  .trust-row span{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:12.5px;
+    font-weight:600;
+    color:#B9CCEC;
+  }
+  .trust-row svg{width:14px;height:14px;color:#62D89B;flex-shrink:0}
+
+  /* ================= DOR (PAIN) ================= */
+  .pain{background:var(--white)}
+
+  .section-title{
+    font-size:23px;
+    font-weight:800;
+    line-height:1.35;
+    text-wrap:balance;
+    color:var(--gray-900);
+    text-align:center;
+    margin:10px 0 28px;
   }
 
-  .stat {
-    text-align: center;
-    flex: 1;
+  .compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:14px;
   }
 
-  .stat-num {
-    display: block;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #FF6B00;
-    line-height: 1.1;
+  .compare-card{
+    background:var(--gray-100);
+    border:1px solid #E7EBF1;
+    border-radius:var(--radius-md);
+    padding:20px 14px;
+    text-align:center;
   }
 
-  .stat-label {
-    display: block;
-    font-size: 10px;
-    color: #777;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .4px;
-    margin-top: 3px;
-    text-wrap: pretty;
+  .icon-badge{
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    background:var(--tint);
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 12px;
+  }
+  .icon-badge svg{width:22px;height:22px}
+
+  .compare-card h3{
+    font-size:15px;
+    font-weight:700;
+    color:var(--gray-900);
+    margin-bottom:8px;
   }
 
-  .perks {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 26px;
-    text-align: left;
+  .compare-card .label{
+    font-size:11.5px;
+    color:var(--gray-500);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    margin-bottom:4px;
   }
 
-  .perk {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #1A1A1A;
-    background: #FFF4EC;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border-left: 4px solid #FF6B00;
+  .compare-card .price{
+    font-size:16px;
+    font-weight:800;
+    color:var(--gray-900);
+    line-height:1.3;
+    text-wrap:balance;
   }
 
-  .perk-icon {
-    flex-shrink: 0;
-    line-height: 1.4;
+  .solution-card{
+    background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+    border-radius:var(--radius-md);
+    padding:22px 22px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    box-shadow:0 16px 32px rgba(31,111,222,.28);
   }
 
-  .perk-text {
-    text-wrap: pretty;
-    line-height: 1.4;
-    padding-top: 1px;
+  .solution-card .icon-badge{
+    background:rgba(255,255,255,.16);
+    color:#fff;
+    flex-shrink:0;
+    margin:0;
   }
 
-  .btn-whats {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #2EE573, #1DA851);
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 800;
-    padding: 20px 22px;
-    border-radius: 16px;
-    text-decoration: none;
-    width: 100%;
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
-    transition: transform 0.15s, box-shadow 0.15s;
-    animation: pulse-shadow 1.6s ease-in-out infinite;
-    border: 2px solid #1DA851;
-    text-align: center;
+  .solution-card p{
+    color:#fff;
+    font-size:14.5px;
+    font-weight:600;
+    line-height:1.5;
+    text-wrap:pretty;
   }
 
-  .btn-icon {
-    flex-shrink: 0;
+  .solution-card strong{font-weight:800}
+
+  /* ================= BENEFÍCIOS ================= */
+  .benefits{background:var(--gray-100)}
+
+  .benefit-list{display:flex;flex-direction:column;gap:12px}
+
+  .benefit-card{
+    background:var(--white);
+    border:1px solid #E7EBF1;
+    border-radius:var(--radius-md);
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    box-shadow:0 4px 14px rgba(15,45,102,.05);
   }
 
-  .btn-text {
-    text-wrap: balance;
-    line-height: 1.3;
+  .benefit-card .icon-badge{margin:0;flex-shrink:0}
+
+  .benefit-card p{
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--gray-900);
+    line-height:1.4;
   }
 
-  .btn-whats:active {
-    transform: scale(0.98);
+  /* ================= CREDIBILIDADE ================= */
+  .credibility{
+    background:linear-gradient(160deg,var(--navy),var(--blue-dark) 70%);
+    color:#fff;
   }
 
-  @keyframes pulse-shadow {
-    0%, 100% { box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45); transform: scale(1); }
-    50% { box-shadow: 0 14px 40px rgba(37, 211, 102, 0.7); transform: scale(1.02); }
+  .cred-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 12px;
   }
 
-  .footer {
-    margin-top: 22px;
-    font-size: 15px;
-    color: #888;
-    font-weight: 500;
+  .cred-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:10px;
+    padding:18px 10px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius-md);
   }
 
-  .footer strong {
-    color: #FF6B00;
-    font-weight: 700;
+  .cred-item .icon-badge{
+    background:rgba(255,255,255,.14);
+    color:#fff;
+    margin:0;
   }
 
-  .privacy-link {
-    display: block;
-    margin-top: 16px;
-    font-size: 11px;
-    color: #bbb;
-    text-decoration: none;
+  .cred-item p{
+    font-size:13.5px;
+    font-weight:700;
+    color:#E7EEFC;
+    line-height:1.4;
+    text-wrap:pretty;
   }
 
-  .privacy-link:hover {
-    color: #999;
-    text-decoration: underline;
+  /* ================= URGÊNCIA ================= */
+  .urgency{background:var(--white)}
+
+  .urgency-card{
+    background:var(--tint);
+    border-left:4px solid var(--blue);
+    border-radius:var(--radius-md);
+    padding:22px 20px;
+  }
+
+  .urgency-card .icon-badge{
+    background:var(--white);
+    margin:0 0 14px;
+  }
+
+  .urgency-card p{
+    font-size:14.5px;
+    color:var(--gray-700);
+    line-height:1.7;
+    text-wrap:pretty;
+  }
+
+  /* ================= FINAL CTA ================= */
+  .final-cta{
+    background:
+      radial-gradient(circle at 80% 10%, rgba(76,143,234,.32) 0%, transparent 50%),
+      linear-gradient(160deg, var(--blue-dark), var(--navy) 70%);
+    text-align:center;
+  }
+
+  .final-cta h2{
+    color:#fff;
+    font-size:26px;
+    font-weight:800;
+    line-height:1.3;
+    text-wrap:balance;
+    margin-bottom:14px;
+  }
+
+  .final-cta p.lead{
+    color:#C3D4F2;
+    font-size:15.5px;
+    line-height:1.65;
+    text-wrap:pretty;
+    margin-bottom:26px;
+  }
+
+  /* ================= FOOTER ================= */
+  .site-footer{
+    text-align:center;
+    padding:32px 0 8px;
+    background:var(--gray-100);
+  }
+  .site-footer p{font-size:12.5px;color:var(--gray-500);margin-bottom:8px}
+  .site-footer a{
+    font-size:11.5px;
+    color:var(--gray-500);
+    text-decoration:underline;
+  }
+
+  /* ================= STICKY BOTTOM CTA ================= */
+  .sticky-bar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-top:1px solid #E7EBF1;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -8px 24px rgba(15,30,60,.1);
+    animation:barUp .6s 1.4s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .sticky-bar .wrap{padding:0;max-width:428px}
+  .sticky-bar .btn-cta{padding:13px 18px;font-size:14px;border-radius:12px}
+  .sticky-bar .btn-cta svg{width:19px;height:19px}
+
+  @keyframes barUp{
+    from{transform:translateY(100%)}
+    to{transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sticky-bar{animation:none}
   }
 </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="header">
-    <img class="brand-icon" src="blindacell-icon.png" alt="BlindaCell" width="86" height="79" loading="eager" decoding="async" onerror="this.remove()">
-    <div class="logo">Blinda<span>Cell</span></div>
-    <div class="ribbon">🔥 Grupo Oficial • Vagas Abertas</div>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-icon" src="blindacell-icon.png" alt="BlindaCell" width="72" height="66" loading="eager" decoding="async" onerror="this.remove()">
+
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+      Grupo VIP Oficial BlindaCell
+    </div>
+
+    <h1>Uma tela quebrada pode custar mais de <span class="money">R$ 3.000</span>.</h1>
+
+    <p class="lead">Proteja seu celular e receba descontos exclusivos, promoções antecipadas e atendimento prioritário através do Grupo VIP BlindaCell.</p>
+
+    <div class="hero-cta-wrap">
+      <a class="btn-cta" href="https://chat.whatsapp.com/EVWbcuZMVo5H0sJrqABLFH?s=cl&p=i&ilr=0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.04 3.5a8.93 8.93 0 0 0-7.74 13.4L3 21l4.27-1.12a8.9 8.9 0 0 0 4.77 1.37A8.93 8.93 0 0 0 21 12.65a8.86 8.86 0 0 0-3.4-6.33zM12.04 19.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.74.75-2.73-.18-.28a7.4 7.4 0 0 1-1.13-3.94 7.42 7.42 0 1 1 7.41 7.41zm4.07-5.55c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.85-.13.15-.26.16-.48.05-.22-.11-1.04-.38-1.98-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.01-.39.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.4.08-.16.04-.3-.04-.41-.07-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.59.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.53 2.34 3.71 3.18 1.84.7 2.21.62 2.61.55.39-.07 1.3-.53 1.49-1.04.18-.5.18-.93.13-1.04-.05-.1-.18-.16-.39-.27z"/></svg>
+        <span>Entrar no Grupo VIP agora</span>
+      </a>
+
+      <div class="trust-row">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Entrada gratuita</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sem compromisso</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vagas limitadas</span>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="content">
-    <h1>Desconto, prioridade e <span>novidade em 1º lugar</span></h1>
-    <div class="subtitle">Grupo VIP BlindaCell</div>
+<!-- ================= DOR (PAIN) ================= -->
+<section class="pain section-pad">
+  <div class="wrap">
+    <div class="eyebrow reveal">O risco real</div>
+    <h2 class="section-title reveal">Uma simples queda pode virar um grande prejuízo.</h2>
 
-    <p>Uma tela trincada custa de <strong>R$ 300 a R$ 800</strong> pra consertar. No Grupo VIP você trava desconto exclusivo na blindagem e fica sabendo na hora de toda promoção — antes que as vagas acabem.</p>
-
-    <div class="stats-row">
-      <div class="stat"><span class="stat-num">+500</span><span class="stat-label">celulares blindados</span></div>
-      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">aprovação dos clientes</span></div>
-      <div class="stat"><span class="stat-num">0</span><span class="stat-label">telas quebradas depois</span></div>
+    <div class="compare-grid reveal">
+      <div class="compare-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>
+        </div>
+        <h3>Android</h3>
+        <div class="label">Troca de tela</div>
+        <div class="price">R$ 300 a R$ 1.000+</div>
+      </div>
+      <div class="compare-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>
+        </div>
+        <h3>iPhone</h3>
+        <div class="label">Troca de tela</div>
+        <div class="price">R$ 800 a R$ 3.000+</div>
+      </div>
     </div>
 
-    <div class="perks">
-      <div class="perk"><span class="perk-icon">🛡️</span><span class="perk-text">Até 30% OFF em qualquer blindagem</span></div>
-      <div class="perk"><span class="perk-icon">⚡</span><span class="perk-text">Atendimento prioritário, sem fila de espera</span></div>
-      <div class="perk"><span class="perk-icon">🎁</span><span class="perk-text">Promoções-relâmpago só pra quem está no grupo</span></div>
-      <div class="perk"><span class="perk-icon">🔔</span><span class="perk-text">Você sabe de tudo antes de todo mundo</span></div>
+    <div class="solution-card reveal">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <p><strong>Blindagem:</strong> uma pequena proteção pode evitar um gasto muito maior.</p>
     </div>
+  </div>
+</section>
 
-    <a class="btn-whats" href="https://chat.whatsapp.com/EVWbcuZMVo5H0sJrqABLFH?s=cl&p=i&ilr=0" target="_blank">
-      <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.6 6.32A8.86 8.86 0 0 0 12.04 3.5a8.93 8.93 0 0 0-7.74 13.4L3 21l4.27-1.12a8.9 8.9 0 0 0 4.77 1.37A8.93 8.93 0 0 0 21 12.65a8.86 8.86 0 0 0-3.4-6.33zM12.04 19.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.74.75-2.73-.18-.28a7.4 7.4 0 0 1-1.13-3.94 7.42 7.42 0 1 1 7.41 7.41zm4.07-5.55c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.85-.13.15-.26.16-.48.05-.22-.11-1.04-.38-1.98-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.01-.39.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.4.08-.16.04-.3-.04-.41-.07-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.59.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.53 2.34 3.71 3.18 1.84.7 2.21.62 2.61.55.39-.07 1.3-.53 1.49-1.04.18-.5.18-.93.13-1.04-.05-.1-.18-.16-.39-.27z"/>
-      </svg>
-      <span class="btn-text">Quero meu desconto agora</span>
+<!-- ================= BENEFÍCIOS ================= -->
+<section class="benefits section-pad">
+  <div class="wrap">
+    <div class="eyebrow reveal">Vantagens VIP</div>
+    <h2 class="section-title reveal">O que você recebe ao entrar no Grupo VIP?</h2>
+
+    <div class="benefit-list">
+      <div class="benefit-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <p>Até 30% OFF em blindagens selecionadas</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        </div>
+        <p>Atendimento prioritário</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18M12 8v13"/><path d="M12 8c-1.4-4-6-3.6-6-1 0 1.8 2 1 6 1zM12 8c1.4-4 6-3.6 6-1 0 1.8-2 1-6 1z"/></svg>
+        </div>
+        <p>Promoções exclusivas para membros</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+        </div>
+        <p>Aviso antecipado de campanhas e vagas</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.3 9.5c0-1.4 1.2-2.1 2.7-2.1 1.7 0 2.6.9 2.6 2 0 1.3-1.1 1.7-2.6 2.1-1.5.4-2.7.9-2.7 2.2 0 1.1 1 2 2.7 2 1.5 0 2.7-.7 2.7-2.1"/></svg>
+        </div>
+        <p>Condições especiais que não são divulgadas ao público</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CREDIBILIDADE ================= -->
+<section class="credibility section-pad">
+  <div class="wrap">
+    <h2 class="section-title reveal" style="color:#fff">Por que confiar na BlindaCell</h2>
+
+    <div class="cred-grid reveal">
+      <div class="cred-item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Aplicação profissional</p>
+      </div>
+      <div class="cred-item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Atendimento especializado</p>
+      </div>
+      <div class="cred-item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Centenas de celulares protegidos</p>
+      </div>
+      <div class="cred-item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <p>Tecnologia premium de blindagem</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= URGÊNCIA ================= -->
+<section class="urgency section-pad">
+  <div class="wrap">
+    <div class="eyebrow reveal">Por que entrar agora</div>
+    <h2 class="section-title reveal">As melhores condições chegam primeiro no Grupo VIP.</h2>
+
+    <div class="urgency-card reveal">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div>
+      <p>Muitas promoções possuem quantidade limitada e são divulgadas primeiro para os membros do grupo. Quem entra depois normalmente perde as melhores oportunidades.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta section-pad">
+  <div class="wrap">
+    <h2>Seu celular vale milhares de reais.</h2>
+    <p class="lead">Entre agora no Grupo VIP e receba vantagens exclusivas para proteger seu aparelho gastando muito menos do que um conserto.</p>
+
+    <a class="btn-cta" href="https://chat.whatsapp.com/EVWbcuZMVo5H0sJrqABLFH?s=cl&p=i&ilr=0" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.04 3.5a8.93 8.93 0 0 0-7.74 13.4L3 21l4.27-1.12a8.9 8.9 0 0 0 4.77 1.37A8.93 8.93 0 0 0 21 12.65a8.86 8.86 0 0 0-3.4-6.33zM12.04 19.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.74.75-2.73-.18-.28a7.4 7.4 0 0 1-1.13-3.94 7.42 7.42 0 1 1 7.41 7.41zm4.07-5.55c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.85-.13.15-.26.16-.48.05-.22-.11-1.04-.38-1.98-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.01-.39.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.4.08-.16.04-.3-.04-.41-.07-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.59.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.53 2.34 3.71 3.18 1.84.7 2.21.62 2.61.55.39-.07 1.3-.53 1.49-1.04.18-.5.18-.93.13-1.04-.05-.1-.18-.16-.39-.27z"/></svg>
+      <span>Quero entrar no Grupo VIP</span>
     </a>
+  </div>
+</section>
 
-    <div class="footer">⏳ Vagas <strong>limitadas</strong> — o grupo fecha quando lotar</div>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <p>© 2026 <strong>BlindaCell</strong> · Todos os direitos reservados</p>
+  <a href="politica-de-privacidade.html">Política de Privacidade</a>
+</footer>
 
-    <a class="privacy-link" href="politica-de-privacidade.html">Política de Privacidade</a>
+<!-- ================= STICKY BOTTOM CTA ================= -->
+<div class="sticky-bar">
+  <div class="wrap">
+    <a class="btn-cta" href="https://chat.whatsapp.com/EVWbcuZMVo5H0sJrqABLFH?s=cl&p=i&ilr=0" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.04 3.5a8.93 8.93 0 0 0-7.74 13.4L3 21l4.27-1.12a8.9 8.9 0 0 0 4.77 1.37A8.93 8.93 0 0 0 21 12.65a8.86 8.86 0 0 0-3.4-6.33zM12.04 19.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.74.75-2.73-.18-.28a7.4 7.4 0 0 1-1.13-3.94 7.42 7.42 0 1 1 7.41 7.41zm4.07-5.55c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.85-.13.15-.26.16-.48.05-.22-.11-1.04-.38-1.98-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.01-.39.1-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.4.08-.16.04-.3-.04-.41-.07-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.59.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.53 2.34 3.71 3.18 1.84.7 2.21.62 2.61.55.39-.07 1.3-.53 1.49-1.04.18-.5.18-.93.13-1.04-.05-.1-.18-.16-.39-.27z"/></svg>
+      <span>Entrar no Grupo VIP</span>
+    </a>
   </div>
 </div>
 
